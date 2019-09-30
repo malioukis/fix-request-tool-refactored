@@ -1,0 +1,11 @@
+{
+  "generic": {
+    "userId": "defid",
+    "channel": "defchannel",
+    "country": "defchannel",
+    "subSystem": "defsubSystem",
+    "Language": "defLanguage",
+    "requestDate": "defrequestDate",
+    "businessDate": "defbusinessDate"
+  }
+}

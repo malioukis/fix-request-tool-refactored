@@ -1,0 +1,32 @@
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" >
+ <!-- [(opened)="opened" -->
+    <button id="home" mat-button routerLink="/home">Home</button>
+    <br>
+    <button id="generic" mat-button routerLink="/generic">Generic</button>
+    <br>
+    <button id="postofferdataheader" mat-button routerLink="/post-offer-data-header">PostOfferDataHeader</button>
+    <br>
+    <button id="qrymain" mat-button routerLink="qry-main">QryMain</button>
+    <br>
+    <button mat-button>OfferBranches</button>
+    <br>
+    <button mat-button>OfferCar</button>
+    <br>
+    <button mat-button>OfferLife</button>
+    <br>
+    <button mat-button>OfferFire</button>
+    <br>
+    <button mat-button>Rest</button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+<button mat-button (click)="sidenav.toggle()">Sidebar</button>
+    <!--
+      <button mat-button (click)="opened=!opened">Toggle SideNav</button>
+    <button mat-button (click)="sidenav.open()">Open Sidebar</button>
+    <button mat-button (click)="sidenav.close()">close Sidebar</button> -->
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
