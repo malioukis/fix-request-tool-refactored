@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { GenericPresentationalComponent } from './features/views/generic/generic-presentational.component';
+import { GenericComponent } from './features/components/generic/generic.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/generic', pathMatch: 'full' },
 
-  { path: 'generic', component: GenericPresentationalComponent }
+  { path: 'generic', component: GenericComponent }
 ];
 
 @NgModule({

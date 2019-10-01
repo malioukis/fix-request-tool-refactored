@@ -1,3 +1,5 @@
+import { GenericComponent } from 'src/app/features/components/generic/generic.component';
+
 export interface Generic {
   userId: string;
   channel: number;
@@ -6,8 +8,5 @@ export interface Generic {
   language: string;
   requestDate: string;
   businessDate: string;
-}
-
-export interface Model {
 
 }
