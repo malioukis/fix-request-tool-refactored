@@ -1,4 +1,3 @@
-import { GenericComponent } from 'src/app/features/components/generic/generic.component';
 
 export interface Generic {
   userId: string;

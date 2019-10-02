@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { GenericService } from 'src/app/core/services/generic.service';
-import { Model, Generic } from 'src/app/core/services/request-fields.model';
+import { Generic } from 'src/app/core/services/request-fields.model';
 import { FormGroup } from '@angular/forms';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
@@ -10,11 +9,12 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
   styleUrls: ['./generic-presentational.component.css']
 })
 export class GenericPresentationalComponent implements OnInit {
+  model: any;
 
   // @Output('model') submit = new EventEmitter.emit(model);
   constructor() {}
+
   form = new FormGroup({});
-  model: any = {};
 
   fields: FormlyFieldConfig[] = [
     {
@@ -89,8 +89,29 @@ export class GenericPresentationalComponent implements OnInit {
     }
   ];
 
+  viewChanges() {
+    const before = JSON.parse(sessionStorage.getItem('genericData'));
+    const after = JSON.parse(sessionStorage.getItem('genericSavedData'));
+    console.log('before changes   ', before, 'and after  ', after);
+  }
+
+  submit(model) {
+    console.log(model);
+    this.viewChanges();
+    sessionStorage.setItem('genericSavedData', JSON.stringify(this.model));
+  }
   // onSubmit(model) {
   //   return this.model;
   // }
-  ngOnInit() {}
+
+  ngOnInit() {
+    //  this.model = JSON.parse(sessionStorage.getItem('genericData'));
+    console.log(this.model);
+
+    this.model = JSON.parse(sessionStorage.getItem('genericData'));
+  }
+
+  ngOnDestroy(): void {
+    sessionStorage.removeItem('genericData');
+  }
 }

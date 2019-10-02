@@ -8,10 +8,11 @@ import { FormlyMaterialModule } from '@ngx-formly/material';
 import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
 import { StorageServiceModule } from 'ngx-webstorage-service';
+import { GenericPresentationalComponent } from './views/generic/generic-presentational.component';
 
 
 @NgModule({
-  declarations: [GenericComponent],
+  declarations: [GenericComponent,GenericPresentationalComponent],
   imports: [
     CommonModule,
     CustomMaterialModule,
@@ -29,7 +30,8 @@ import { StorageServiceModule } from 'ngx-webstorage-service';
   ],
   exports: [
     // testing
-    GenericComponent
+    GenericComponent,
+    GenericPresentationalComponent
   ]
 })
 export class FeaturesModule {}
