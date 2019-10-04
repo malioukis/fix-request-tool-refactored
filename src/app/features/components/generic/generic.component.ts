@@ -27,12 +27,6 @@ export class GenericComponent implements OnInit {
         'sessionStorage getitem: ',
         sessionStorage.getItem('genericData')
       );
-
-      if (typeof this.model === 'string') {
-        console.log('it was a string');
-      } else {
-        console.log('einai obj logika');
-      }
     });
   }
   ngOnInit() {

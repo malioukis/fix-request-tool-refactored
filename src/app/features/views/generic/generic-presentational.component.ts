@@ -10,8 +10,6 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
 })
 export class GenericPresentationalComponent implements OnInit {
   model: any;
-
-  // @Output('model') submit = new EventEmitter.emit(model);
   constructor() {}
 
   form = new FormGroup({});
