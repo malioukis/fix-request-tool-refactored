@@ -9,7 +9,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
   styleUrls: ['./generic-presentational.component.css']
 })
 export class GenericPresentationalComponent implements OnInit {
-  model: any;
+  model: Generic;
   constructor() {}
 
   form = new FormGroup({});
@@ -86,6 +86,12 @@ export class GenericPresentationalComponent implements OnInit {
       }
     }
   ];
+  ngOnInit() {
+    //  this.model = JSON.parse(sessionStorage.getItem('genericData'));
+    //console.log(this.model);
+
+    this.model = JSON.parse(sessionStorage.getItem('genericData'));
+  }
 
   viewChanges() {
     const before = JSON.parse(sessionStorage.getItem('genericData'));
@@ -101,15 +107,4 @@ export class GenericPresentationalComponent implements OnInit {
   // onSubmit(model) {
   //   return this.model;
   // }
-
-  ngOnInit() {
-    //  this.model = JSON.parse(sessionStorage.getItem('genericData'));
-    console.log(this.model);
-
-    this.model = JSON.parse(sessionStorage.getItem('genericData'));
-  }
-
-  ngOnDestroy(): void {
-    sessionStorage.removeItem('genericData');
-  }
 }

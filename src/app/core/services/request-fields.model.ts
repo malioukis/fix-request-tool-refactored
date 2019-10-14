@@ -6,5 +6,5 @@ export interface Generic {
   language: string;
   requestDate: string;
   businessDate: string;
-
 }
+

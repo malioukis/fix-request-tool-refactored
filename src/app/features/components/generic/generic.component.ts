@@ -14,7 +14,7 @@ export class GenericComponent implements OnInit {
   model: any = {};
   generic: Generic;
 
-  getGeneric() {
+  fetchGenericData() {
     return this.genericService.getGeneric().subscribe((data: Generic) => {
       // this.model = JSON.stringify(data);
       // this.model = JSON.parse(this.model);
@@ -30,9 +30,7 @@ export class GenericComponent implements OnInit {
     });
   }
   ngOnInit() {
-    this.getGeneric();
+    this.fetchGenericData();
   }
-  ngOnDestroy(): void {
-    sessionStorage.removeItem('genericData');
-  }
+
 }
